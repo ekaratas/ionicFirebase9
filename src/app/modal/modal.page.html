@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="urun">{{urun.ad}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="kapat()" expand="block" fill="clear" shape="round">
+        Kapat
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="urun">
+
+    <ion-item>
+      <ion-label position="stacked">Ürün</ion-label>
+      <ion-input [(ngModel)]="urun.ad"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Adet</ion-label>
+      <ion-input [(ngModel)]="urun.adet"></ion-input>
+    </ion-item>
+
+  </div>
+
+  <ion-button (click)="urunGuncelle()" expand="block" color="success">
+    <ion-icon slot="save" name="add"></ion-icon>
+    Güncelle
+  </ion-button>
+<ion-button (click)="urunSil()" expand="block" color="danger">
+  <ion-icon slot="trash" name="add"></ion-icon>
+  Sil
+</ion-button>
+</ion-content>
